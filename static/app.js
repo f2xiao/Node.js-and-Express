@@ -3,6 +3,8 @@ const http = require("http");
 const url = require("url");
 const fs = require("fs");
 const path = require("path");
+// tool used to check the file in the directory and return its type
+const mime = require("mime");
 
 //create a server
 const app = http.createServer();
@@ -15,15 +17,24 @@ app.on("request", (req, res) => {
     if (req.url != "/favicon.ico") {
       console.log(req.url);
       let { pathname, query } = url.parse(req.url, true);
+      pathname =
+        pathname == "/" || pathname == "/index.html"
+          ? "/default.html"
+          : pathname;
       //handle different routes to match the file name in the folder
       //use fs and path modules and check if there is a real file in the app folder to match it instead of listing all cases of the url cases
       let realPath = path.join(__dirname, "public" + pathname);
       fs.readFile(realPath, (err, result) => {
+        let type = mime.getType(realPath);
+        // console.log(type);
         if (!err) {
+          res.writeHead(200, {
+            "content-type": `${type};charset=utf8`,
+          });
           res.end(result);
         } else {
           res.writeHead(404, {
-            "content-type": "text/html;charset=utf8",
+            "content-type": `${type};charset=utf8`,
           });
           res.end("read file failed");
           return;
