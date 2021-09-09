@@ -1,0 +1,6 @@
+01.js connect to mongoDB with mongoose
+02.js create a collection and a document in that collection
+03.js another method to create a document in collections
+04.js read documents in a collection based on queries
+05.js delete documents in a collection based on queries
+06.js update documents in a collection based on queries
