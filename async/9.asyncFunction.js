@@ -4,7 +4,7 @@ const fs = require("fs");
 // };
 
 // Fn();
-/* function P(n) {
+function P(n) {
   return new Promise((resolve, reject) => {
     fs.readFile(`${n}.txt`, "utf8", (error, result) => {
       resolve(result);
@@ -20,14 +20,4 @@ async function run() {
   console.log(r2);
   console.log(r3);
 }
-run(); */
-
-function foo() {
-  fs.readFile("./2.txt", "utf8", (err, result) => {
-    if (!err) {
-      return Promise.resolve(2);
-    }
-  });
-}
-let r2 = foo();
-console.log(r2);
+run();
