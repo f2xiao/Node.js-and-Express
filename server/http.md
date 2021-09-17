@@ -33,12 +33,13 @@ whenever there is a request event happen, a callback function can be used to res
 
   1. included in the uri
   2. use url module's parse() to extract req.url
+     `{pathname, query}=url.parse(req.url, true)`
 
 - POST:
   1. to get the data tranferred through post request
   2. it can be accessed through data event in the req body
      `req.on('data', chunk=>{})`
-  3. once data transferred is done, the end event is called and can be used to acess the result data
+  3. once data transferred is done, the end event is called and can be used to acess the result data, need to use querystring to parse the data
      `req.on('end',()=>{console.log(querystring.parse(postData));});`
 
 ## Route
