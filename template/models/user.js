@@ -15,6 +15,11 @@ const userSchema = new mongoose.Schema({
   password: String,
   email: String,
   hobbies: [String],
+  college: { type: String, default: "Heima" },
+  enterDate: {
+    type: Date,
+    default: Date.now,
+  },
 });
 
 const User = mongoose.model("user", userSchema);
