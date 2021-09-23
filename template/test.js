@@ -6,7 +6,8 @@ const path = require("path");
 const views = path.join(__dirname, "views", "test.art");
 const Data = {
   content: "<h1>I am h1 heading</h1>",
-  data: { name: "Tom", age: 20 },
+  data: { name: "Tom", age: 16 },
+  fruits: ["apples", "pear", "coconut"],
 };
 const html = template(views, Data);
 // console.log(html);

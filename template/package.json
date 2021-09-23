@@ -1,0 +1,21 @@
+{
+  "name": "template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "test.js",
+  "dependencies": {
+    "art-template": "^4.13.2",
+    "dateformat": "^4.5.1",
+    "finalhandler": "^1.1.2",
+    "mongoose": "^6.0.6",
+    "serve-static": "^1.14.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "nodemon --ext *"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
