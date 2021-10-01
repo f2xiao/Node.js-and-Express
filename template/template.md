@@ -87,6 +87,20 @@ js expressions
    <li><%= 1<2 ? 'yes' :'no'%></li>
 ```
 
+to access first-class varible
+
+- array
+
+```dotnetcli
+$value
+```
+
+- obeject
+
+```
+$index, $value
+```
+
 ## Raw output
 
 by default, template engine doesn't parse html tags inside the data value because of security reason since bad website can use alter tag for ads purposes. However, if you want to parse html tag, follow the following syntax:
@@ -106,14 +120,19 @@ or
 if and if else if
 
 ```
-{{each data}}
-<li>{{$index}} {{$value}}</li>
-{{/each}}
+{{if value}} ... {{/if}}
+{{if v1}} ... {{else if v2}} ... {{/if}}
 ```
 
 ## loop
 
 arrays and objects
+
+```
+{{each target}}
+<li>{{$index}} {{$value}}</li>
+{{/each}}
+```
 
 ## Sub templates
 
