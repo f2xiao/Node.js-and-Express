@@ -8,7 +8,7 @@
   </head>
   <body>
     <h2>Users</h2>
-    {{each users}}
+    {{each $data.data}}
     <ul>
       <li>{{ $value["name"] }}</li>
       <li>{{ $value["age"] }}</li>
