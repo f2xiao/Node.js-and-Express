@@ -3,7 +3,7 @@ const port = 3000;
 
 require("./model/connect");
 const Student = require("./model/student");
-const studentController = require("./controller/studentController");
+const studentController = require("./studentController");
 
 const app = http.createServer();
 
